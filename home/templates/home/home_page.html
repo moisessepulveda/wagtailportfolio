@@ -341,10 +341,20 @@
           </div>
           <div class="contacts__social">
             <ul>
-              <li><a href="">Facebook</a></li>
-              <li><a href="">Linkedin</a></li>
-              <li><a href="">GitHub</a></li>
-              <li><a href="">YouTube</a></li>
+              {% if page.facebook_link %}
+              <li><a href="{{ page.facebook_link }}">Facebook</a></li>
+              {% endif %}
+              
+              {% if page.linkedin_link %}
+              <li><a href="{{ page.linkedin_link }}">Linkedin</a></li>
+              {% endif %}
+
+              {% if page.github_link %}
+              <li><a href="{{ page.github_link }}">GitHub</a></li>
+              {% endif %}
+              {% if page.youtube_link %}
+              <li><a href="{{ page.youtube_link }}">Youtube</a></li>
+              {% endif %}
             </ul>
           </div>
         </div>
