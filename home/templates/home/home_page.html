@@ -242,68 +242,24 @@
       <div class="container">
         <div id="carouselTestimonials" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
-            <li data-target="#carouselTestimonials" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselTestimonials" data-slide-to="1"></li>
-            <li data-target="#carouselTestimonials" data-slide-to="2"></li>
-            <li data-target="#carouselTestimonials" data-slide-to="3"></li>
+              {% for t in page.testimonials %}
+              <li data-target="#carouselTestimonials" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+              {% endfor %}
           </ol>
           <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <div class="row">
-                <div class="col-md-10 col-sm-10 col-10 mr-auto ml-auto">
-                  <p class="slider-carousel__title">Antonio Anderson</p>
-                  <p class="slider-carousel__caption">Project: Landin page for travel company</p>
-                  <hr>
-                  <p class="slider-carousel__description">Up or well must less rent read walk so be. Easy
-                    sold at do hour sing spot. Any meant has cease too the decay. Since party burst am
-                    it match. By or blushes between besides offices noisier as. Sending do brought winding
-                    compass in. Easy sold at do hour sing spot less rent read walk so be. Any meant has
-                    cease too the decay. </p>
+              {% for t in page.testimonials %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <div class="row">
+                    <div class="col-md-10 col-sm-10 col-10 mr-auto ml-auto">
+                    <p class="slider-carousel__title">{{ t.value.title }}</p>
+                    <p class="slider-carousel__caption">Proyecto: {{ t.value.project }}</p>
+                    <hr>
+                    <p class="slider-carousel__description">{{ t.value.message|capfirst }}</p>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-10 col-sm-10 col-10 mr-auto ml-auto">
-                  <p class="slider-carousel__title">Antonio Anderson</p>
-                  <p class="slider-carousel__caption">Project: Landin page for travel company</p>
-                  <hr>
-                  <p class="slider-carousel__description">Up or well must less rent read walk so be. Easy
-                    sold at do hour sing spot. Any meant has cease too the decay. Since party burst am
-                    it match. By or blushes between besides offices noisier as. Sending do brought winding
-                    compass in. Easy sold at do hour sing spot less rent read walk so be. Any meant has
-                    cease too the decay. </p>
                 </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-10 col-sm-10 col-10 mr-auto ml-auto">
-                  <p class="slider-carousel__title">Antonio Anderson</p>
-                  <p class="slider-carousel__caption">Project: Landin page for travel company</p>
-                  <hr>
-                  <p class="slider-carousel__description">Up or well must less rent read walk so be. Easy
-                    sold at do hour sing spot. Any meant has cease too the decay. Since party burst am
-                    it match. By or blushes between besides offices noisier as. Sending do brought winding
-                    compass in. Easy sold at do hour sing spot less rent read walk so be. Any meant has
-                    cease too the decay. </p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-10 col-sm-10 col-10 mr-auto ml-auto">
-                  <p class="slider-carousel__title">Antonio Anderson</p>
-                  <p class="slider-carousel__caption">Project: Landin page for travel company</p>
-                  <hr>
-                  <p class="slider-carousel__description">Up or well must less rent read walk so be. Easy
-                    sold at do hour sing spot. Any meant has cease too the decay. Since party burst am
-                    it match. By or blushes between besides offices noisier as. Sending do brought winding
-                    compass in. Easy sold at do hour sing spot less rent read walk so be. Any meant has
-                    cease too the decay. </p>
-                </div>
-              </div>
-            </div>
+            {% endfor %}
+           
           </div>
           <a class="carousel-control-prev" href="#testimonials" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -325,59 +281,29 @@
   <section id="blog" class="container section">
     <div class="row">
       <div class="col-md-12">
-        <h2 id="blog_header" class="section__title">Latest Posts_</h2>
+        <h2 id="blog_header" class="section__title">{{ page.courses_title|title }}</h2>
       </div>
     </div>
-
     <div class="row post-cards">
+        {% for c in page.courses %}
       <div class="col-md-4">
-        <a href="blog.html">
+        <a href="{{ c.value.link }}">
           <div class="post-cards__card">
             <div class="post-cards__img">
-              <img src="{% static 'home/assets/img/img_blog_1.png' %}" alt="blog_img">
+                {% image c.value.image fill-350x350-c100 alt="blog_img" %}
             </div>
             <div class="post-cards__info">
-              <p class="post-cards__date">October 22, 2017</p>
-              <h3 class="post-cards_title">How to use css-preprocessor</h3>
-              <p class="post-cards_description">Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit, sed do eiusmod tempr incididunt...
+              <p class="post-cards__date">{{ c.value.technology|upper }} </p>
+              <h3 class="post-cards_title">{{ c.value.title|upper}}</h3>
+              <p class="post-cards_description">
+                  {{ c.value.summary|capfirst }}
               </p>
             </div>
           </div>
         </a>
       </div>
-      <div class="col-md-4">
-        <a href="blog.html">
-          <div class="post-cards__card">
-            <div class="post-cards__img">
-              <img src="{% static 'home/assets/img/img_blog_2.png' %}" alt="blog_img">
-            </div>
-            <div class="post-cards__info">
-              <p class="post-cards__date">October 22, 2017</p>
-              <h3 class="post-cards_title">How I organize my work with code</h3>
-              <p class="post-cards_description">Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit, sed do eiusmod tempr incididu...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a href="blog.html">
-          <div class="post-cards__card">
-            <div class="post-cards__img">
-              <img src="{% static 'home/assets/img/img_blog_3.png' %}" alt="blog_img">
-            </div>
-            <div class="post-cards__info">
-              <p class="post-cards__date">October 22, 2017</p>
-              <h3 class="post-cards_title">SVG sprites vs Icon Font</h3>
-              <p class="post-cards_description">Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit, sed do eiusmod tempr incididu...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
+      {% endfor %}
+      
     </div>
   </section>
 {# Blog #}

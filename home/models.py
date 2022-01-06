@@ -91,6 +91,25 @@ class HomePage(Page):
      ])),
     ])
 
+    courses_title = models.CharField(max_length=50, default="Cursos creados por mi_")
+    courses = StreamField([
+     ('curso', blocks.StructBlock([
+        ('title', blocks.CharBlock(label="Título")),
+        ('image', ImageChooserBlock(label="Imagen")),
+        ('summary', blocks.TextBlock(label="Resumen")),
+        ('technology', blocks.CharBlock(label="Tecnología")),
+        ('link', blocks.URLBlock(label="Enlace Video/Lista")),
+     ])),
+    ])
+
+    testimonials = StreamField([
+     ('testimonio', blocks.StructBlock([
+        ('title', blocks.CharBlock(label="Título")),
+        ('project', blocks.CharBlock(label="Proyecto")),
+        ('message', blocks.TextBlock(label="Mensaje")),
+     ])),
+    ])
+
 
     # proyects field end
 
@@ -132,7 +151,14 @@ class HomePage(Page):
         MultiFieldPanel([
             FieldPanel('project_title', classname="title"),
             StreamFieldPanel("projects")
-        ], heading="Proyectos", classname="collapsible collapsed")
+        ], heading="Proyectos", classname="collapsible collapsed"),
+        MultiFieldPanel([
+            StreamFieldPanel("testimonials")
+        ], heading="Testimonios", classname="collapsible collapsed"),
+        MultiFieldPanel([
+            FieldPanel('courses_title', classname="title"),
+            StreamFieldPanel("courses")
+        ], heading="Mis Cursos", classname="collapsible collapsed")
         
     ]
 
