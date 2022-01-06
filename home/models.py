@@ -29,7 +29,8 @@ class CustomEmailForm:
             #if isinstance(field.widget, widgets.Textarea):
             #    field.widget.attrs.update({'rows': '5'})
             if any([isinstance(field.widget, widgets.TextInput),
-                isinstance(field.widget, widgets.EmailInput)]):
+                isinstance(field.widget, widgets.EmailInput),
+                isinstance(field.widget, widgets.Textarea)]):
                 field.widget.attrs.update({'placeholder': field.label})
 
             # for all fields, get any existing CSS classes and add 'form-control'
