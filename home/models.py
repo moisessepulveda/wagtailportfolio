@@ -6,8 +6,10 @@ from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, StreamField
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.documents.edit_handlers import DocumentChooserPanel
 from wagtail.core import blocks
-from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
+from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, FieldRowPanel
 from wagtail.images.blocks import ImageChooserBlock
+from django import template
+
 
 class HomePage(Page):
     # hero fields
@@ -21,7 +23,8 @@ class HomePage(Page):
     github_link = models.URLField("Enlace de github", null=True, blank=True)
     linkedin_link = models.URLField("Enlace linked IN", null=True, blank=True)
     facebook_link = models.URLField("Enlace de facebook", null=True, blank=True)
-    
+    youtube_link  = models.URLField("Enlace de YouTube", null=True, blank=True)
+
     hero_picture = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -84,6 +87,7 @@ class HomePage(Page):
         ('image', ImageChooserBlock(label="Imagen")),
         ('summary', blocks.TextBlock(label="Resumen")),
         ('descripcion', blocks.TextBlock(label="Descripción")),
+        ('stack_used', blocks.TextBlock(label="Tecnologías utilizadas")),
      ])),
     ])
 
@@ -95,12 +99,23 @@ class HomePage(Page):
     content_panels = Page.content_panels + [
         MultiFieldPanel([
             FieldPanel('name', classname="title"),
-            FieldPanel('profession', classname="full"),
-            FieldPanel('age', classname="full"),
-            FieldPanel('phone', classname="full"),
-            FieldPanel('email', classname="full"),
+
+            FieldRowPanel([
+                FieldPanel('profession', classname="full"),
+                FieldPanel('age', classname="full"),
+            ]),
+            FieldRowPanel([
+                FieldPanel('phone', classname="full"),
+                FieldPanel('email', classname="full"),
+            ]),
             FieldPanel('address', classname="full"),
             ImageChooserPanel('hero_picture'),
+            MultiFieldPanel([
+                FieldPanel('github_link'),
+                FieldPanel('facebook_link'),
+                FieldPanel('linkedin_link'),
+                FieldPanel('youtube_link'),
+            ], heading="Redes Sociales"),
         ], heading="Hero"),
         MultiFieldPanel([
             FieldPanel('presentation_title'),
@@ -120,3 +135,5 @@ class HomePage(Page):
         ], heading="Proyectos", classname="collapsible collapsed")
         
     ]
+
+
