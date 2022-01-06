@@ -1,17 +1,51 @@
 from django.db import models
-
+from django.shortcuts import redirect
 from wagtail.core.models import Page
 from wagtail.core.fields import RichTextField, StreamField
-from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, StreamFieldPanel
+from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, StreamFieldPanel, InlinePanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.documents.edit_handlers import DocumentChooserPanel
 from wagtail.core import blocks
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, FieldRowPanel
 from wagtail.images.blocks import ImageChooserBlock
-from django import template
+from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
+from modelcluster.fields import ParentalKey
+from django.forms import widgets  # used to find TextArea widget
+from django.contrib import messages
 
 
-class HomePage(Page):
+
+class FormField(AbstractFormField):
+    page = ParentalKey('HomePage', on_delete=models.CASCADE, related_name='form_fields')
+
+class CustomEmailForm:
+    def get_form(self, *args, **kwargs):
+        form = super().get_form(*args, **kwargs)
+        # form = super(AbstractEmailForm, self).get_form(*args, **kwargs)  # use this syntax for Python 2.x
+        # iterate through the fields in the generated form
+        for name, field in form.fields.items():
+            # here we want to adjust the widgets on each field
+            # if the field is a TextArea - adjust the rows
+            #if isinstance(field.widget, widgets.Textarea):
+            #    field.widget.attrs.update({'rows': '5'})
+            if any([isinstance(field.widget, widgets.TextInput),
+                isinstance(field.widget, widgets.EmailInput)]):
+                field.widget.attrs.update({'placeholder': field.label})
+
+            # for all fields, get any existing CSS classes and add 'form-control'
+            # ensure the 'class' attribute is a string of classes with spaces
+            css_classes = field.widget.attrs.get('class', '').split()
+            css_classes.append('form-control')
+            field.widget.attrs.update({'class': ' '.join(css_classes)})
+        return form
+
+class HomePage(CustomEmailForm, AbstractEmailForm):
+
+    def render_landing_page(self, request, form_submission=None, *args, **kwargs):
+        messages.success(request, 'Tu mensaje se ha enviado Correctamente, Pronto estaremos en contacto')
+        return redirect("/")
+
+
     # hero fields
     name = models.CharField("Nombre", max_length=100, null=True)
     profession = models.CharField("Profesión", max_length=100, null=True)
@@ -158,7 +192,17 @@ class HomePage(Page):
         MultiFieldPanel([
             FieldPanel('courses_title', classname="title"),
             StreamFieldPanel("courses")
-        ], heading="Mis Cursos", classname="collapsible collapsed")
+        ], heading="Mis Cursos", classname="collapsible collapsed"),
+        MultiFieldPanel([
+            InlinePanel('form_fields', label="Form fields"),
+            MultiFieldPanel([
+            FieldRowPanel([
+                FieldPanel('from_address', classname="col6"),
+                FieldPanel('to_address', classname="col6"),
+            ]),
+            FieldPanel('subject'),
+        ], "Email"),
+        ], heading="Contactanos", classname="collapsible collapsed"),
         
     ]
 

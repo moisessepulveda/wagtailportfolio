@@ -309,23 +309,22 @@
 {# Blog #}
 
 {# Contact #}
+
   <div class="background" style="background-image: url({% static 'home/assets/img/img_bg_main.jpg' %})">
     <div id="contact" class="container section">
       <div class="row">
         <div class="col-md-12">
-          <p id="contacts_header" class="section__title">Get in touch_</p>
+          <p id="contacts_header" class="section__title">Contáctame_</p>
         </div>
       </div>
       <div class="row contacts">
         <div class="col-md-5 col-lg-4">
           <div class="contacts__list">
             <dl class="contact-list">
-              <dt>Phone:</dt>
-              <dd><a href="tel:82344563333">8 (234) 456-33-33</a></dd>
-              <dt>Skype:</dt>
-              <dd><a href="skype:iamivanovivan">iamivanovivan</a></dd>
-              <dt>Email:</dt>
-              <dd><a href="mailto:mail@mail.com">mail@mail.com</a></dd>
+              <dt>Teléfono:</dt>
+              <dd><a href="tel:{{ page.phone|cut:" "|cut:"+" }}">{{ page.phone }}</a></dd>
+              <dt>Correo:</dt>
+              <dd><a href="mailto:{{ page.email|lower }}">{{ page.email|lower }}</a></dd>
             </dl>
           </div>
           <div class="contacts__social">
@@ -333,34 +332,30 @@
               <li><a href="">Facebook</a></li>
               <li><a href="">Linkedin</a></li>
               <li><a href="">GitHub</a></li>
-              <li><a href="">Bitbucket</a></li>
+              <li><a href="">YouTube</a></li>
             </ul>
           </div>
         </div>
         <div class="col-md-7 col-lg-5">
           <div class="contacts__form">
-            <p class="contacts__form-title">Or just write me a letter here_</p>
-            <form class="js-form">
-              <div class="form-group">
-                <input class="form-field js-field-name" type="text" placeholder="Your name" required>
-                <span class="form-validation"></span>
-                <span class="form-invalid-icon"><i class="mdi mdi-close" aria-hidden="true"></i></span>
-              </div>
-              <div class="form-group">
-                <input class="form-field js-field-email" type="email"  placeholder="Your e-mail" required>
-                <span class="form-validation"></span>
-                <span class="form-invalid-icon"><i class="mdi mdi-close" aria-hidden="true"></i></span>
-              </div>
-              <div class="form-group">
-                <textarea class="form-field js-field-message" placeholder="Type the message here" required></textarea>
-                <span class="form-validation"></span>
-                <span class="form-invalid-icon"><i class="mdi mdi-close" aria-hidden="true"></i></span>
-              </div>
-              <button class="site-btn site-btn--form" type="submit" value="Send">Send</button>
-            </form>
+            <p class="contacts__form-title">o escribeme por Aquí!_</p>
+                <form action="{% pageurl page %}" method="POST">
+                    {% csrf_token %}
+                    {% for f in form %}
+                        <div class="form-group">
+                            {{f}}
+                            <span class="form-validation"></span>
+                            <span class="form-invalid-icon"><i class="mdi mdi-close" aria-hidden="true"></i></span>
+                        </div>
+                    {% endfor %}
+                    <button class="site-btn site-btn--form" type="submit" value="">Enviar</button>
+                </form>
           </div>
           <div class="footer">
-            <p>© 2016 Ivan Susanin. All Rights Reserved</p>
+            <p>© {% now "Y" %} Moisés Sepúlveda - Sitio construido utilizando DJANGO WAGTAIL </p>
+
+           
+            
           </div>
         </div>
       </div>
@@ -393,7 +388,6 @@
         <div  class="portfolio-modal__stack">
           <p class="portfolio-modal__stack-title">Tecnologías utilizadas:</p>
           <ul class="tags">
-              
             {% for s in project.value.stack_used|split:"," %}
                 <li>{{s}}</li>
             {% endfor %}
@@ -416,9 +410,20 @@
   <script src="{% static 'home/assets/js/portfolio-filter.js' %}"></script>
   <script src="{% static 'home/assets/js/slider-carousel.js' %}"></script>
   <script src="{% static 'home/assets/js/mobile-menu.js' %}"></script>
-  <script src="{% static 'home/assets/js/contacts.js' %}"></script>
   <script src="{% static 'home/assets/js/mbclicker.min.js' %}"></script>
   <script src="{% static 'home/assets/js/site-btn.js' %}"></script>
   <script src="{% static 'home/assets/js/style-switcher.js' %}"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  {% if messages %}
+  {% for m in messages %}
+      <script>
+          Swal.fire({
+              "title": "Felicidades",
+              "text": "{{m}}",
+              "icon": "success"
+          })
+      </script>
+  {% endfor %}
+{% endif %}
 </body>
 </html>

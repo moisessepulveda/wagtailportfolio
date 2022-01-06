@@ -62,6 +62,9 @@ MIDDLEWARE = [
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
+
+
 ROOT_URLCONF = 'porfolio.urls'
 
 TEMPLATES = [
