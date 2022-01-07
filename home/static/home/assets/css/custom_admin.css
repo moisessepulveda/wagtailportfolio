@@ -1,0 +1,12 @@
+:root {
+
+    --color-primary-hue: 253;
+    --color-primary-saturation: 46%;
+    --color-primary-lightness: 55%;
+    --color-primary-darker-hue: 296;
+    --color-primary-darker-saturation: 16%;
+    --color-primary-darker-lightness: 59%;
+    --color-primary-dark-hue: 280;
+    --color-primary-dark-saturation: 55%;
+    --color-primary-dark-lightness: 15%;
+}
