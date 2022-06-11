@@ -1,0 +1,410 @@
+{% load wagtailcore_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% load static %}
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Simplelist is a Android&IOS Shopping calculator APP utility">
+    <meta name="author" content="Moisés Sepúlveda">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <meta property="og:site_name" content="simple list"/> <!-- website name -->
+    <meta property="og:site" content="www.simplelist.cl"/> <!-- website link -->
+    <meta property="og:title" content="Simple List"/> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="Simple list shopping calculator app"/>
+    <!-- description shown in the actual shared post -->
+    <meta property="og:image" content=""/> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content=""/> <!-- where do you want your post to link to -->
+    <meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+
+    <!-- Webpage Title -->
+    <title>{{ page.title }}</title>
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="{% static 'simplelist/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'simplelist/css/fontawesome-all.css' %}" rel="stylesheet">
+    <link href="{% static 'simplelist/css/swiper.css' %}" rel="stylesheet">
+    <link href="{% static 'simplelist/css/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'simplelist/css/styles.css' %}" rel="stylesheet">
+
+    <!-- Favicon  -->
+    <link rel="icon" href="{% static 'simplelist/images/favicon.png' %}' %}">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="container">
+
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Name</a> -->
+
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" href="index.html"><img src="{% static 'simplelist/images/logo.svg' %}"
+                                                                  alt="alternative"></a>
+
+        <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">Enlaces</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item page-scroll" href="terms.html">Términos y condiciones</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item page-scroll" href="privacy.html">Politica de privacidad</a>
+                    </div>
+                </li>
+            </ul>
+        </div> <!-- end of navbar-collapse -->
+    </div> <!-- end of container -->
+</nav> <!-- end of navbar -->
+<!-- end of navigation -->
+
+
+<!-- Header -->
+<header id="header" class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="text-container">
+                    <h1 class="h1-large">{{ page.hero_title|title }} <span
+                            id="js-rotating">{{ page.hero_changing_words }}</span></h1>
+                    <p class="p-large">{{ page.hero_subtitle|capfirst }}</p>
+                    <a class="btn-solid-lg" href="{{ page.app_store_url }}"><i class="fab fa-apple"></i>Descargar</a>
+                    <a class="btn-solid-lg" href="{{ page.gplay_url }}"><i class="fab fa-google-play"></i>Descargar</a>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-6">
+                <div class="image-container">
+                    <img class="img-fluid" src="{% static 'simplelist/images/i13mock.png' %}" alt="alternative">
+                </div> <!-- end of image-container -->
+            </div> <!-- end of div -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</header> <!-- end of header -->
+<!-- end of header -->
+
+
+<!-- Details 1 -->
+<div id="details" class="basic-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="image-container">
+                    <img class="img-fluid" style="border-radius: 20px"
+                         src="{% static 'simplelist/images/i13mock2.jpeg' %}" alt="alternative">
+                </div> <!-- end of image-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-6">
+                <div class="text-container">
+                    <h2>{{ page.title_section1|title }}</h2>
+                    <p>{{ page.description_section1|richtext }}</p>
+
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of basic-2 -->
+<!-- end of details 1 -->
+
+
+<!-- Details 1 Lightbox -->
+<!-- Lightbox -->
+<div id="details-1-lightbox" class="lightbox-basic zoom-anim-dialog mfp-hide">
+    <div class="row">
+        <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+        <div class="col-lg-8">
+            <div class="image-container">
+                <img class="img-fluid" src="{% static 'simplelist/images/imock13.jpeg' %}" alt="alternative">
+            </div> <!-- end of image-container -->
+        </div> <!-- end of col -->
+        <div class="col-lg-4">
+            <h3>Ferme Sollicitudin</h3>
+            <hr>
+            <p>Mauris vitae ultricies leo integer malesuada nunc vel risus commodo. Enim eu turpis egestas pretium
+                aenean</p>
+            <h4>Tortor Aliquam</h4>
+            <p>Nulla facilisi cras fermentum odio eu feugiat pulvinar elementum integer enim neque volutpat ac tincidunt
+                vitae revita</p>
+            <ul class="list-unstyled li-space-lg">
+                <li class="media">
+                    <i class="fas fa-check"></i>
+                    <div class="media-body">Eleifend quam adipiscing vitae proin</div>
+                </li>
+                <li class="media">
+                    <i class="fas fa-check"></i>
+                    <div class="media-body">Sagittis nisl rhoncus mattis facilisi</div>
+                </li>
+                <li class="media">
+                    <i class="fas fa-check"></i>
+                    <div class="media-body">Lorem ipsum dolor sit amet consectetur</div>
+                </li>
+                <li class="media">
+                    <i class="fas fa-check"></i>
+                    <div class="media-body">Massa eget egestas purus iverra msan</div>
+                </li>
+                <li class="media">
+                    <i class="fas fa-check"></i>
+                    <div class="media-body">In nisl nisi scelerisque mauris cursus</div>
+                </li>
+            </ul>
+            <a class="btn-solid-reg mfp-close page-scroll" href="#download">Download</a>
+            <button class="btn-outline-reg mfp-close as-button" type="button">Back</button>
+        </div> <!-- end of col -->
+    </div> <!-- end of row -->
+</div> <!-- end of lightbox-basic -->
+<!-- end of lightbox -->
+<!-- end of details 1 lightbox -->
+
+
+<!-- Details 2 -->
+<div class="basic-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="text-container">
+                    <h2>{{ page.title_section2 | title }}</h2>
+                    <p>{{ page.description_section2| richtext }}</p>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-6">
+                <div class="image-container">
+                    <img class="img-fluid" style="border-radius: 20px"
+                         src="{% static 'simplelist/images/imock13.jpeg' %}" alt="alternative">
+                </div> <!-- end of image-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of basic-3 -->
+<!-- end of details 2 -->
+
+
+<!-- Features -->
+<div id="features" class="tabs">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="h2-heading">{{ page.title_section3|title }}</h2>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <div class="row">
+
+            <!-- Tabs Links -->
+            <ul class="nav nav-tabs" id="templateTabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab"
+                       aria-controls="tab-1" aria-selected="true"><i class="fas fa-cog"></i>Tus listas</a>
+                </li>
+
+            </ul>
+            <!-- end of tabs links -->
+
+
+            <!-- Tabs Content-->
+            <div class="tab-content" id="templateTabsContent">
+
+                <!-- Tab -->
+                <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="image-container">
+                                    <img class="img-fluid" src="{% static 'simplelist/images/mock133.jpeg' %}"
+                                         alt="alternative">
+                                </div> <!-- end of image-container -->
+                            </div> <!-- end of col -->
+                            <div class="col-lg-6">
+                                <div class="text-container">
+                                    <h3>{{ page.subtitle_section3|title }}</h3>
+                                    <p>{{ page.description_section3|richtext }}</p>
+                                </div> <!-- end of text-container -->
+                            </div> <!-- end of col -->
+                        </div> <!-- end of row -->
+                    </div> <!-- end of container -->
+                </div> <!-- end of tab-pane -->
+                <!-- end of tab -->
+
+                <!-- Tab -->
+                <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="image-container">
+                                    <img class="img-fluid" src="{% static 'simplelist/images/features-2.jpg' %}"
+                                         alt="alternative">
+                                </div> <!-- end of image-container -->
+                            </div> <!-- end of col -->
+                            <div class="col-lg-6">
+                                <div class="text-container">
+                                    <h3>Arcu cursus vitae congue res</h3>
+                                    <p>Mauris rhoncus aenean vel euismod nisi porta lorem mollis aliquam ut porttitor
+                                        leo a. Lectus sit amet est placerat Venenatis lectus magna fringilla urna
+                                        porttitor curs dictum sit amet justo</p>
+                                    <ul class="list-unstyled li-space-lg">
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">Purus gravida quis blandit turpis cursus elemenm
+                                                integer
+                                            </div>
+                                        </li>
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">Enim neque volutpat ac tincidunt vitae semper quis
+                                                ornare aen
+                                            </div>
+                                        </li>
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">Elementum nisi quis eleifend sit amet luctus
+                                                venenatis le
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <a class="btn-solid-reg page-scroll" href="#download">Download</a>
+                                </div> <!-- end of text-container -->
+                            </div> <!-- end of col -->
+                        </div> <!-- end of row -->
+                    </div> <!-- end of container -->
+                </div> <!-- end of tab-pane -->
+                <!-- end of tab -->
+
+                <!-- Tab -->
+                <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="image-container">
+                                    <img class="img-fluid" src="{% static 'simplelist/images/features-3.jpg' %}"
+                                         alt="alternative">
+                                </div> <!-- end of image-container -->
+                            </div> <!-- end of col -->
+                            <div class="col-lg-6">
+                                <div class="text-container">
+                                    <h3>Tristique magna sit amet pur</h3>
+                                    <p>A lacus vestibulum sed arcu non mattis ullamcorper velit sed ullamc orper morbi
+                                        tincidunt ornare. Purus faucibus ornare suspendisse sed nisi lacus sed viverra
+                                        molesti devine lorem</p>
+                                    <ul class="list-unstyled li-space-lg">
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">Nunc mattis justo nec ultrices dui sapien eget mi
+                                                risus
+                                            </div>
+                                        </li>
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">Maecenas accumsan lacus vel facilisis lacus laoreet
+                                                non curabitur
+                                            </div>
+                                        </li>
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">Haretra non enim praesent elementum facilisis leo
+                                                vel justo
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <a class="btn-solid-reg page-scroll" href="#download">Download</a>
+                                </div> <!-- end of text-container -->
+                            </div> <!-- end of col -->
+                        </div> <!-- end of row -->
+                    </div> <!-- end of container -->
+                </div><!-- end of tab-pane -->
+                <!-- end of tab -->
+
+            </div> <!-- end of tab-content -->
+            <!-- end of tabs content -->
+
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of tabs -->
+<!-- end of features -->
+
+
+<!-- Download -->
+<div class="counter">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="image-container">
+                    <img class="img-fluid" src="{% static 'simplelist/images/imock135.png' %}" alt="alternative">
+                </div> <!-- end of image-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-6">
+                <div class="text-container">
+
+                    <p>{{ page.download_caption|capfirst }}</p>
+                    <a class="btn-solid-lg" href="{{ page.app_store_url }}"><i class="fab fa-apple"></i>Descargar</a>
+                    <a class="btn-solid-lg" href="{{ page.gplay_url }}"><i class="fab fa-google-play"></i>Descargar</a>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of counter -->
+<!-- end of download -->
+
+
+<!-- Footer -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer-col first">
+                    <h6>{{ page.footer_title|title }}</h6>
+                    <p class="p-small">{{ page.footer_desc|capfirst }}</p>
+                </div> <!-- end of footer-col -->
+                <div class="footer-col second">
+                    <h6>{{ page.footer_link_label|capfirst }}</h6>
+                    <ul class="list-unstyled li-space-lg p-small">
+                        {% for url in page.footer_urls %}
+                            <li>
+                                <a href="{{ url.value.urls }}">{{ url.value.label }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div> <!-- end of footer-col -->
+                <div class="footer-col third">
+
+                    <p class="p-small">Nunc lobortis mattis aliq uamf <a href="mailto:contact@site.com"><strong>contact@site.com</strong></a>
+                    </p>
+                </div> <!-- end of footer-col -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of footer -->
+<!-- end of footer -->
+
+
+<!-- Copyright -->
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="p-small">{{ page.footer_copyright|capfirst }}</p>
+            </div> <!-- end of col -->
+        </div> <!-- enf of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of copyright -->
+<!-- end of copyright -->
+
+
+<!-- Scripts -->
+<script src="{% static 'simplelist/js/jquery.min.js' %}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+<script src="{% static 'simplelist/js/bootstrap.min.js' %}"></script> <!-- Bootstrap framework -->
+<script src="{% static 'simplelist/js/jquery.easing.min' %}.js"></script>
+<!-- jQuery Easing for smooth scrolling between anchors -->
+<script src="{% static 'simplelist/js/swiper.min.js' %}"></script> <!-- Swiper for image and text sliders -->
+<script src="{% static 'simplelist/js/jquery.magnific-popup' %}.js"></script> <!-- Magnific Popup for lightboxes -->
+<script src="{% static 'simplelist/js/morphext.min.js' %}"></script> <!-- Morphtext rotating text in the header -->
+<script src="{% static 'simplelist/js/scripts.js' %}"></script> <!-- Custom scripts -->
+</body>
+</html>

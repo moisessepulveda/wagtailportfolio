@@ -14,9 +14,9 @@ from django.forms import widgets  # used to find TextArea widget
 from django.contrib import messages
 
 
-
 class FormField(AbstractFormField):
     page = ParentalKey('HomePage', on_delete=models.CASCADE, related_name='form_fields')
+
 
 class CustomEmailForm:
     def get_form(self, *args, **kwargs):
@@ -26,11 +26,11 @@ class CustomEmailForm:
         for name, field in form.fields.items():
             # here we want to adjust the widgets on each field
             # if the field is a TextArea - adjust the rows
-            #if isinstance(field.widget, widgets.Textarea):
+            # if isinstance(field.widget, widgets.Textarea):
             #    field.widget.attrs.update({'rows': '5'})
             if any([isinstance(field.widget, widgets.TextInput),
-                isinstance(field.widget, widgets.EmailInput),
-                isinstance(field.widget, widgets.Textarea)]):
+                    isinstance(field.widget, widgets.EmailInput),
+                    isinstance(field.widget, widgets.Textarea)]):
                 field.widget.attrs.update({'placeholder': field.label})
 
             # for all fields, get any existing CSS classes and add 'form-control'
@@ -40,12 +40,12 @@ class CustomEmailForm:
             field.widget.attrs.update({'class': ' '.join(css_classes)})
         return form
 
+
 class HomePage(CustomEmailForm, AbstractEmailForm):
 
     def render_landing_page(self, request, form_submission=None, *args, **kwargs):
         messages.success(request, 'Tu mensaje se ha enviado Correctamente, Pronto estaremos en contacto')
         return redirect("/")
-
 
     # hero fields
     name = models.CharField("Nombre", max_length=100, null=True)
@@ -58,7 +58,7 @@ class HomePage(CustomEmailForm, AbstractEmailForm):
     github_link = models.URLField("Enlace de github", null=True, blank=True)
     linkedin_link = models.URLField("Enlace linked IN", null=True, blank=True)
     facebook_link = models.URLField("Enlace de facebook", null=True, blank=True)
-    youtube_link  = models.URLField("Enlace de YouTube", null=True, blank=True)
+    youtube_link = models.URLField("Enlace de YouTube", null=True, blank=True)
 
     hero_picture = models.ForeignKey(
         'wagtailimages.Image',
@@ -84,32 +84,32 @@ class HomePage(CustomEmailForm, AbstractEmailForm):
         related_name='+'
     )
     # presentation fields end
-    
+
     # resume fields
     resume_title = models.CharField("Título", max_length=50, default="")
     resume_body = RichTextField("Cuerpo", null=True)
 
     education = StreamField([
-     ('item', blocks.StructBlock([
-         ('university', blocks.CharBlock(label="Universidad/Instituto")),
-         ('period', blocks.CharBlock(label="Periodo")),
-         ('title', blocks.TextBlock(label="Descripción")),
-     ])),
+        ('item', blocks.StructBlock([
+            ('university', blocks.CharBlock(label="Universidad/Instituto")),
+            ('period', blocks.CharBlock(label="Periodo")),
+            ('title', blocks.TextBlock(label="Descripción")),
+        ])),
     ])
 
     job_history = StreamField([
-     ('trabajo', blocks.StructBlock([
-         ('enterprise', blocks.CharBlock(label="Empresa")),
-         ('period', blocks.CharBlock(label="Periodo")),
-         ('description', blocks.TextBlock(label="Descripción")),
-     ])),
+        ('trabajo', blocks.StructBlock([
+            ('enterprise', blocks.CharBlock(label="Empresa")),
+            ('period', blocks.CharBlock(label="Periodo")),
+            ('description', blocks.TextBlock(label="Descripción")),
+        ])),
     ])
 
     skills = StreamField([
-     ('habilidades', blocks.StructBlock([
-         ('technology', blocks.CharBlock(label="Tecnología")),
-         ('percentage', blocks.CharBlock(label="Porcentaje")),
-     ])),
+        ('habilidades', blocks.StructBlock([
+            ('technology', blocks.CharBlock(label="Tecnología")),
+            ('percentage', blocks.CharBlock(label="Porcentaje")),
+        ])),
     ])
 
     # resume fields end
@@ -117,36 +117,35 @@ class HomePage(CustomEmailForm, AbstractEmailForm):
     # proyects fields
     project_title = models.CharField("Titulo", max_length=50, default="Mis Proyectos_")
     projects = StreamField([
-     ('project', blocks.StructBlock([
-        ('title', blocks.CharBlock(label="Título")),
-        ('image', ImageChooserBlock(label="Imagen")),
-        ('summary', blocks.TextBlock(label="Resumen")),
-        ('descripcion', blocks.TextBlock(label="Descripción")),
-        ('stack_used', blocks.TextBlock(label="Tecnologías utilizadas")),
-     ])),
+        ('project', blocks.StructBlock([
+            ('title', blocks.CharBlock(label="Título")),
+            ('image', ImageChooserBlock(label="Imagen")),
+            ('summary', blocks.TextBlock(label="Resumen")),
+            ('descripcion', blocks.TextBlock(label="Descripción")),
+            ('stack_used', blocks.TextBlock(label="Tecnologías utilizadas")),
+        ])),
     ])
 
     courses_title = models.CharField(max_length=50, default="Cursos creados por mi_")
     courses = StreamField([
-     ('curso', blocks.StructBlock([
-        ('title', blocks.CharBlock(label="Título")),
-        ('image', ImageChooserBlock(label="Imagen")),
-        ('summary', blocks.TextBlock(label="Resumen")),
-        ('technology', blocks.CharBlock(label="Tecnología")),
-        ('link', blocks.URLBlock(label="Enlace Video/Lista")),
-     ])),
+        ('curso', blocks.StructBlock([
+            ('title', blocks.CharBlock(label="Título")),
+            ('image', ImageChooserBlock(label="Imagen")),
+            ('summary', blocks.TextBlock(label="Resumen")),
+            ('technology', blocks.CharBlock(label="Tecnología")),
+            ('link', blocks.URLBlock(label="Enlace Video/Lista")),
+        ])),
     ])
 
     testimonials = StreamField([
-     ('testimonio', blocks.StructBlock([
-        ('title', blocks.CharBlock(label="Título")),
-        ('project', blocks.CharBlock(label="Proyecto")),
-        ('message', blocks.TextBlock(label="Mensaje")),
-     ])),
+        ('testimonio', blocks.StructBlock([
+            ('title', blocks.CharBlock(label="Título")),
+            ('project', blocks.CharBlock(label="Proyecto")),
+            ('message', blocks.TextBlock(label="Mensaje")),
+        ])),
     ])
 
-
-    # proyects field end
+    # project field end
 
     # content panels
 
@@ -197,14 +196,12 @@ class HomePage(CustomEmailForm, AbstractEmailForm):
         MultiFieldPanel([
             InlinePanel('form_fields', label="Form fields"),
             MultiFieldPanel([
-            FieldRowPanel([
-                FieldPanel('from_address', classname="col6"),
-                FieldPanel('to_address', classname="col6"),
-            ]),
-            FieldPanel('subject'),
-        ], "Email"),
+                FieldRowPanel([
+                    FieldPanel('from_address', classname="col6"),
+                    FieldPanel('to_address', classname="col6"),
+                ]),
+                FieldPanel('subject'),
+            ], "Email"),
         ], heading="Contactanos", classname="collapsible collapsed"),
-        
+
     ]
-
-

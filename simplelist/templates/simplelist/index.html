@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {% load static %}
+        <!-- SEO Meta Tags -->
+        <meta name="description" content="Simplelist is a Android&IOS Shopping calculator APP utility">
+        <meta name="author" content="Moisés Sepúlveda">
+
+        <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+        <meta property="og:site_name" content="simple list" /> <!-- website name -->
+        <meta property="og:site" content="www.simplelist.cl" /> <!-- website link -->
+        <meta property="og:title" content="Simple List"/> <!-- title shown in the actual shared post -->
+        <meta property="og:description" content="Simple list shopping calculator app" /> <!-- description shown in the actual shared post -->
+        <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+        <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+        <meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+
+        <!-- Webpage Title -->
+        <title>SimpleList</title>
+
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+        <link href="{% static 'simplelist/css/bootstrap.css' %}" rel="stylesheet">
+        <link href="{% static 'simplelist/css/fontawesome-all.css' %}" rel="stylesheet">
+        <link href="{% static 'simplelist/css/swiper.css' %}" rel="stylesheet">
+        <link href="{% static 'simplelist/css/magnific-popup.css' %}" rel="stylesheet">
+        <link href="{% static 'simplelist/css/styles.css' %}" rel="stylesheet">
+
+        <!-- Favicon  -->
+        <link rel="icon" href="{% static 'simplelist/images/favicon.png' %}' %}">
+    </head>
+    <body data-spy="scroll" data-target=".fixed-top">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+            <div class="container">
+
+                <!-- Text Logo - Use this if you don't have a graphic logo -->
+                <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Name</a> -->
+
+                <!-- Image Logo -->
+                <a class="navbar-brand logo-image" href="index.html"><img src="{% static 'simplelist/images/logo.svg' %}" alt="alternative"></a>
+
+                <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="article.html">Article <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="features.html">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="pricing.html">Pricing</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Drop</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                <a class="dropdown-item page-scroll" href="terms.html">Terms Conditions</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item page-scroll" href="privacy.html">Privacy Policy</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                    <span class="nav-item">
+                        <a class="btn-outline-sm page-scroll" href="#download">Download</a>
+                    </span>
+                </div> <!-- end of navbar-collapse -->
+            </div> <!-- end of container -->
+        </nav> <!-- end of navbar -->
+        <!-- end of navigation -->
+
+
+        <!-- Header -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="text-container">
+                            <h1 class="h1-large">Lorem ipsum dolor  <span id="js-rotating">ametelite, consecte, adipiscin</span></h1>
+                            <p class="p-large">Tempor incididunt ut labore et dolore magna aliqua. Blandit cursus risus at ultrices mi tempus imperdiet serica</p>
+                            <a class="btn-solid-lg" href="#your-link"><i class="fab fa-apple"></i>Download</a>
+                            <a class="btn-solid-lg" href="#your-link"><i class="fab fa-google-play"></i>Download</a>
+                        </div> <!-- end of text-container -->
+                    </div> <!-- end of col -->
+                    <div class="col-lg-6">
+                        <div class="image-container">
+                            <img class="img-fluid" src="{% static 'simplelist/images/header-smartphone.png' %}" alt="alternative">
+                        </div> <!-- end of image-container -->
+                    </div> <!-- end of div -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </header> <!-- end of header -->
+        <!-- end of header -->
+
+
+        <!-- Small Features -->
+        <div class="cards-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <!-- Card -->
+                        <div class="card">
+                            <div class="card-image">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Consecte Adipisci</h5>
+                                <p>Vel quam elementum pulvinar etiam. Nisl vel pretium lectus quam id leo in vitae re</p>
+                            </div>
+                        </div>
+                        <!-- end of card -->
+
+                        <!-- Card -->
+                        <div class="card">
+                            <div class="card-image">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Elitsedo Eiusmodor</h5>
+                                <p>Vel quam elementum pulvinar etiam. Nisl vel pretium lectus quam id leo in vitae re</p>
+                            </div>
+                        </div>
+                        <!-- end of card -->
+
+                        <!-- Card -->
+                        <div class="card">
+                            <div class="card-image">
+                                <i class="fas fa-compass"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Mauris Cursusma</h5>
+                                <p>Vel quam elementum pulvinar etiam. Nisl vel pretium lectus quam id leo in vitae re</p>
+                            </div>
+                        </div>
+                        <!-- end of card -->
+
+                        <!-- Card -->
+                        <div class="card">
+                            <div class="card-image">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Feugiat Pretiumsen</h5>
+                                <p>Vel quam elementum pulvinar etiam. Nisl vel pretium lectus quam id leo in vitae re</p>
+                            </div>
+                        </div>
+                        <!-- end of card -->
+
+                        <!-- Card -->
+                        <div class="card">
+                            <div class="card-image">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Dipsum Consequat</h5>
+                                <p>Vel quam elementum pulvinar etiam. Nisl vel pretium lectus quam id leo in vitae re</p>
+                            </div>
+                        </div>
+                        <!-- end of card -->
+
+                        <!-- Card -->
+                        <div class="card">
+                            <div class="card-image">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Nisl Vel Ligula</h5>
+                                <p>Vel quam elementum pulvinar etiam. Nisl vel pretium lectus quam id leo in vitae re</p>
+                            </div>
+                        </div>
+                        <!-- end of card -->
+
+                        <!-- Card -->
+                        <div class="card">
+                            <div class="card-image">
+                                <i class="fas fa-calendar"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Ulamcor Malesuada</h5>
+                                <p>Vel quam elementum pulvinar etiam. Nisl vel pretium lectus quam id leo in vitae re</p>
+                            </div>
+                        </div>
+                        <!-- end of card -->
+
+                        <!-- Card -->
+                        <div class="card">
+                            <div class="card-image">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Proin Libero Vel</h5>
+                                <p>Vel quam elementum pulvinar etiam. Nisl vel pretium lectus quam id leo in vitae re</p>
+                            </div>
+                        </div>
+                        <!-- end of card -->
+
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of cards-1 -->
+        <!-- end of small features -->
+
+
+        <!-- Description -->
+        <div class="basic-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="text-container">
+                            <p>Semper auctor neque vitae tempus quam pellentesque pellentesque eu tincidunt tortor aliquam nulla facilisi cras nipa</p>
+                        </div> <!-- end of text-container -->
+                    </div> <!-- end of col -->
+                    <div class="col-lg-6">
+                        <div class="image-container">
+                            <img class="img-fluid" src="{% static 'simplelist/images/description.jpg' %}" alt="alternative">
+                        </div> <!-- end of image-container -->
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of basic-1 -->
+        <!-- end of description -->
+
+
+        <!-- Details 1 -->
+        <div id="details" class="basic-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="image-container">
+                            <img class="img-fluid" src="{% static 'simplelist/images/details-1.png' %}" alt="alternative">
+                        </div> <!-- end of image-container -->
+                    </div> <!-- end of col -->
+                    <div class="col-lg-6">
+                        <div class="text-container">
+                            <h2>Vel turpis nunc eget lo rem dolor sed pelen tes</h2>
+                            <p>Nisl tincidunt eget nullam non. Posuere morbi leo urna molestie. Turpis egestas pretium aenean pharetra magna ac placerat acc umsan tortor posuere ac ut conse nibh <a class="page-scroll" href="#download">download the app</a></p>
+                            <ul class="list-unstyled li-space-lg">
+                                <li class="media">
+                                    <i class="fas fa-square"></i>
+                                    <div class="media-body">Proin gravida hendrerit lectus aet malesuada fames ac turpis</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-square"></i>
+                                    <div class="media-body">Egestas integer diam ut venenatis tellus in metus sed revo</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-square"></i>
+                                    <div class="media-body">Cursus metus aliquam eleifend mi in nulla posuere mauris au</div>
+                                </li>
+                            </ul>
+                            <a class="btn-solid-reg popup-with-move-anim" href="#details-1-lightbox">Lightbox</a>
+                        </div> <!-- end of text-container -->
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of basic-2 -->
+        <!-- end of details 1 -->
+
+
+        <!-- Details 1 Lightbox -->
+        <!-- Lightbox -->
+        <div id="details-1-lightbox" class="lightbox-basic zoom-anim-dialog mfp-hide">
+            <div class="row">
+                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+                <div class="col-lg-8">
+                    <div class="image-container">
+                        <img class="img-fluid" src="{% static 'simplelist/images/details-1-lightbox.jpg' %}" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <h3>Ferme Sollicitudin</h3>
+                    <hr>
+                    <p>Mauris vitae ultricies leo integer malesuada nunc vel risus commodo. Enim eu turpis egestas pretium aenean</p>
+                    <h4>Tortor Aliquam</h4>
+                    <p>Nulla facilisi cras fermentum odio eu feugiat pulvinar elementum integer enim neque volutpat ac tincidunt vitae revita</p>
+                    <ul class="list-unstyled li-space-lg">
+                        <li class="media">
+                            <i class="fas fa-check"></i><div class="media-body">Eleifend quam adipiscing vitae proin</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-check"></i><div class="media-body">Sagittis nisl rhoncus mattis facilisi</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-check"></i><div class="media-body">Lorem ipsum dolor sit amet consectetur</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-check"></i><div class="media-body">Massa eget egestas purus iverra msan</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-check"></i><div class="media-body">In nisl nisi scelerisque mauris cursus</div>
+                        </li>
+                    </ul>
+                    <a class="btn-solid-reg mfp-close page-scroll" href="#download">Download</a> <button class="btn-outline-reg mfp-close as-button" type="button">Back</button>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of lightbox-basic -->
+        <!-- end of lightbox -->
+        <!-- end of details 1 lightbox -->
+
+
+        <!-- Details 2 -->
+        <div class="basic-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="text-container">
+                            <h2>Mattis molestie a rev iaculis at erat odio euto</h2>
+                            <p>Ipsum consequat nisl vel ligula ullamcorper malesuada proin libero vel quam elementum pulvinar etiam Nisl vel pretium lectus quam id leo in vitae Semper auctor neque <a class="page-scroll" href="#download">download the app</a></p>
+                            <ul class="list-unstyled li-space-lg">
+                                <li class="media">
+                                    <i class="fas fa-square"></i>
+                                    <div class="media-body"><strong>Vitae tempus quam</strong> cras vel turpis nuncs eget lorem dolor</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-square"></i>
+                                    <div class="media-body"><strong>Eu tincidunt tortor</strong> habitant morbi tristique senectus et netus et</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-square"></i>
+                                    <div class="media-body"><strong>Aliquam nullafa</strong> bibendum at varius vel pharetra vitae proin</div>
+                                </li>
+                            </ul>
+                            <a class="btn-solid-reg" href="terms.html">Terms</a>
+                            <a class="btn-outline-reg" href="privacy.html">Policy</a>
+                        </div> <!-- end of text-container -->
+                    </div> <!-- end of col -->
+                    <div class="col-lg-6">
+                        <div class="image-container">
+                            <img class="img-fluid" src="{% static 'simplelist/images/details-2.png' %}" alt="alternative">
+                        </div> <!-- end of image-container -->
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of basic-3 -->
+        <!-- end of details 2 -->
+
+
+        <!-- Features -->
+        <div id="features" class="tabs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="h2-heading">Vitae purus faucibus ornare suspendisse sed nisi lacu</h2>
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+                <div class="row">
+
+                    <!-- Tabs Links -->
+                    <ul class="nav nav-tabs" id="templateTabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true"><i class="fas fa-cog"></i>CONFIGURING</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false"><i class="fas fa-binoculars"></i>TRACKING</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false"><i class="fas fa-search"></i>MONITORING</a>
+                        </li>
+                    </ul>
+                    <!-- end of tabs links -->
+
+
+                    <!-- Tabs Content-->
+                    <div class="tab-content" id="templateTabsContent">
+
+                        <!-- Tab -->
+                        <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="image-container">
+                                            <img class="img-fluid" src="{% static 'simplelist/images/features-1.jpg' %}" alt="alternative">
+                                        </div> <!-- end of image-container -->
+                                    </div> <!-- end of col -->
+                                    <div class="col-lg-6">
+                                        <div class="text-container">
+                                            <h3>Curabitur gravida arcu act</h3>
+                                            <p>Elementum facilisis leo vel fringilla est ullamcorper urna id volutpat lacus laoreet non curabitur gravida arcu. Non nisi est sit amet facilisis magna etiam tincidunt lobortis feugiat vivamus</p>
+                                            <ul class="list-unstyled li-space-lg">
+                                                <li class="media">
+                                                    <i class="fas fa-square"></i>
+                                                    <div class="media-body">At augue scelerisque felis imperdiet proin fermentum leo</div>
+                                                </li>
+                                                <li class="media">
+                                                    <i class="fas fa-square"></i>
+                                                    <div class="media-body">Pharetra convallis posuere morbi leo urna enim nec dui matis</div>
+                                                </li>
+                                                <li class="media">
+                                                    <i class="fas fa-square"></i>
+                                                    <div class="media-body">Enim ut tellus elementum sagittis egestas congue quisque</div>
+                                                </li>
+                                            </ul>
+                                            <a class="btn-solid-reg page-scroll" href="#download">Download</a>
+                                        </div> <!-- end of text-container -->
+                                    </div> <!-- end of col -->
+                                </div> <!-- end of row -->
+                            </div> <!-- end of container -->
+                        </div> <!-- end of tab-pane -->
+                        <!-- end of tab -->
+
+                        <!-- Tab -->
+                        <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="image-container">
+                                            <img class="img-fluid" src="{% static 'simplelist/images/features-2.jpg' %}" alt="alternative">
+                                        </div> <!-- end of image-container -->
+                                    </div> <!-- end of col -->
+                                    <div class="col-lg-6">
+                                        <div class="text-container">
+                                            <h3>Arcu cursus vitae congue res</h3>
+                                            <p>Mauris rhoncus aenean vel euismod nisi porta lorem mollis aliquam ut porttitor leo a. Lectus sit amet est placerat Venenatis lectus magna fringilla urna porttitor curs dictum sit amet justo</p>
+                                            <ul class="list-unstyled li-space-lg">
+                                                <li class="media">
+                                                    <i class="fas fa-square"></i>
+                                                    <div class="media-body">Purus gravida quis blandit turpis cursus elemenm integer</div>
+                                                </li>
+                                                <li class="media">
+                                                    <i class="fas fa-square"></i>
+                                                    <div class="media-body">Enim neque volutpat ac tincidunt vitae semper quis ornare aen</div>
+                                                </li>
+                                                <li class="media">
+                                                    <i class="fas fa-square"></i>
+                                                    <div class="media-body">Elementum nisi quis eleifend sit amet luctus venenatis le</div>
+                                                </li>
+                                            </ul>
+                                            <a class="btn-solid-reg page-scroll" href="#download">Download</a>
+                                        </div> <!-- end of text-container -->
+                                    </div> <!-- end of col -->
+                                </div> <!-- end of row -->
+                            </div> <!-- end of container -->
+                        </div> <!-- end of tab-pane -->
+                        <!-- end of tab -->
+
+                        <!-- Tab -->
+                        <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="image-container">
+                                            <img class="img-fluid" src="{% static 'simplelist/images/features-3.jpg' %}" alt="alternative">
+                                        </div> <!-- end of image-container -->
+                                    </div> <!-- end of col -->
+                                    <div class="col-lg-6">
+                                        <div class="text-container">
+                                            <h3>Tristique magna sit amet pur</h3>
+                                            <p>A lacus vestibulum sed arcu non mattis ullamcorper velit sed ullamc orper morbi tincidunt ornare. Purus faucibus ornare suspendisse sed nisi lacus sed viverra molesti devine lorem</p>
+                                            <ul class="list-unstyled li-space-lg">
+                                                <li class="media">
+                                                    <i class="fas fa-square"></i>
+                                                    <div class="media-body">Nunc mattis justo nec ultrices dui sapien eget mi risus</div>
+                                                </li>
+                                                <li class="media">
+                                                    <i class="fas fa-square"></i>
+                                                    <div class="media-body">Maecenas accumsan lacus vel facilisis lacus laoreet non curabitur</div>
+                                                </li>
+                                                <li class="media">
+                                                    <i class="fas fa-square"></i>
+                                                    <div class="media-body">Haretra non enim praesent elementum facilisis leo vel justo</div>
+                                                </li>
+                                            </ul>
+                                            <a class="btn-solid-reg page-scroll" href="#download">Download</a>
+                                        </div> <!-- end of text-container -->
+                                    </div> <!-- end of col -->
+                                </div> <!-- end of row -->
+                            </div> <!-- end of container -->
+                        </div><!-- end of tab-pane -->
+                        <!-- end of tab -->
+
+                    </div> <!-- end of tab-content -->
+                    <!-- end of tabs content -->
+
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of tabs -->
+        <!-- end of features -->
+
+
+        <!-- Video -->
+        <div class="basic-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="h2-heading">Laoreet sitamet</h2>
+                        <div class="p-heading">Dictum duis at consectetur lorem donec massa congue eu consequat ac felis donec. Aliqu am eleifend mi in nulla. Sed blandit libero volutpat sed cras ornare arcu dui</div>
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <!-- Video Preview -->
+                        <div class="image-container">
+                            <div class="video-wrapper">
+                                <a class="popup-youtube" href="https://www.youtube.com/watch?v=fLCjQJCekTs" data-effect="fadeIn">
+                                    <img class="img-fluid" src="{% static 'simplelist/images/video-frame.jpg' %}" alt="alternative">
+                                    <span class="video-play-button">
+                                        <span></span>
+                                    </span>
+                                </a>
+                            </div> <!-- end of video-wrapper -->
+                        </div> <!-- end of image-container -->
+                        <!-- end of video preview -->
+
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of basic-4 -->
+        <!-- end of video -->
+
+
+        <!-- Questions -->
+        <div id="questions" class="basic-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="h2-small-viewport">In Nulla Posuere Rev Sollicitu</h2>
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="first">
+                            <h6>Q: Nibh mauris cursus mattis mo?</h6>
+                            <p class="mb-4">A: At erat pellentesque ac tortor dignissim convallis aenean et tortor. Suspendisse in est ante in nibh mauris cursus mattis. Nulla facili si nullam vehicula ipsum a arcu curis vera</p>
+                            <h6>Q: Vel elit scelerisque maurisp?</h6>
+                            <p class="mb-4">A: Cursus euismod quis viverra nibh cras pulvinar mattis nunc. Erat pellentesque adip iscing commodo elit at imperdiet dui. Utre placerat orci nulla pellentesque dignissim enim sit amet venenatis. Consectetur adip iscing elit ut aliquam purus sit amet</p>
+                            <h6>Q: Enim lobortis scelerisque fe?</h6>
+                            <p>A: Faucibus in ornare Nisi porta lorem mollis aliquam ut porttitor leo a. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tinc idunt ornare nascetur ridiculus mus res</p>
+                        </div> <!-- end of first -->
+                    </div> <!-- end of div -->
+                    <div class="col-lg-4">
+                        <div class="second">
+                            <h2 class="h2-large-viewport">In Nulla Ver Posuerde Sollicit Deni</h2>
+                            <h6>Q: Aliquam ultrices sagittis?</h6>
+                            <p class="mb-4">A: A scelerisque purus semper eget duis sce leri sque fermentum dui faucibus in ornare quam. Nibh praesent tristique magna sit ame tpurus gravida quis. Eu augue ut lectus arcu bibendum at varius vel pharetra dui accum</p>
+                            <h6>Q: Duis sce leri sque ferment?</h6>
+                            <p>A: Tristique magna sit amet purus gravida qui seu augue ut lectus arcu bibendum at varius vel pharetra. Dui accumsan sit amet nerva so</p>
+                        </div> <!-- end of second -->
+                    </div> <!-- end of div -->
+                    <div class="col-lg-4">
+                        <div class="third">
+                            <h6>Q: At lectus urna duis convallis?</h6>
+                            <p class="mb-4">A: Pharetra magna ac placerat vestibulum lec tus mauris ultrices. Interdum velit laoreet id donec ultrices. Diam vulputate ut pharetra sit amet mi quis hendrerit</p>
+                            <h6>Q: Amet massa vitae tortor condim?</h6>
+                            <p class="mb-4">A: Est ullamcorper eget nulla facilisi. Tristique senectus et netus et malesuada fames ac. Pretium viverra suspendisse potenti nullam ac tortor vitae purus. In hendrerit gravida rutrum quisque. In iaculis nunc sed augue accumsan tortor posuere ac ut consequat</p>
+                            <h6>Q: Metus vulputate eu scelerisqu?</h6>
+                            <p>A: Semper viverra nam at tempor commodo ullamcorper a lacus. Fusce id velit ut tortor scelerisque in dictum non consectetur a vitae sapien pellentesque habitant morbi tristi</p>
+                        </div> <!-- end of third -->
+                    </div> <!-- end of div -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of basic-5 -->
+        <!-- end of questions -->
+
+
+        <!-- Testimonials -->
+        <div class="slider-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <!-- Card Slider -->
+                        <div class="slider-container">
+                            <div class="swiper-container card-slider">
+                                <div class="swiper-wrapper">
+
+                                    <!-- Slide -->
+                                    <div class="swiper-slide">
+                                        <div class="card">
+                                            <img class="card-image" src="{% static 'simplelist/images/testimonial-1.jpg' %}" alt="alternative">
+                                            <div class="card-body">
+                                                <p class="testimonial-text">Elementum integer enim neque volutpat aliquam ultrices sagittis orci a sceleri sque purus arcu dictum varius duis</p>
+                                                <p class="testimonial-author">Lorem Ipsum - Job Title</p>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end of swiper-slide -->
+                                    <!-- end of slide -->
+
+                                    <!-- Slide -->
+                                    <div class="swiper-slide">
+                                        <div class="card">
+                                            <img class="card-image" src="{% static 'simplelist/images/testimonial-2.jpg' %}" alt="alternative">
+                                            <div class="card-body">
+                                                <p class="testimonial-text">Elementum integer enim neque volutpat aliquam ultrices sagittis orci a sceleri sque purus arcu dictum varius duis</p>
+                                                <p class="testimonial-author">Lorem Ipsum - Job Title</p>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end of swiper-slide -->
+                                    <!-- end of slide -->
+
+                                    <!-- Slide -->
+                                    <div class="swiper-slide">
+                                        <div class="card">
+                                            <img class="card-image" src="{% static 'simplelist/images/testimonial-3.jpg' %}" alt="alternative">
+                                            <div class="card-body">
+                                                <p class="testimonial-text">Elementum integer enim neque volutpat aliquam ultrices sagittis orci a sceleri sque purus arcu dictum varius duis</p>
+                                                <p class="testimonial-author">Lorem Ipsum - Job Title</p>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end of swiper-slide -->
+                                    <!-- end of slide -->
+
+                                    <!-- Slide -->
+                                    <div class="swiper-slide">
+                                        <div class="card">
+                                            <img class="card-image" src="{% static 'simplelist/images/testimonial-4.jpg' %}" alt="alternative">
+                                            <div class="card-body">
+                                                <p class="testimonial-text">Elementum integer enim neque volutpat aliquam ultrices sagittis orci a sceleri sque purus arcu dictum varius duis</p>
+                                                <p class="testimonial-author">Lorem Ipsum - Job Title</p>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end of swiper-slide -->
+                                    <!-- end of slide -->
+
+                                    <!-- Slide -->
+                                    <div class="swiper-slide">
+                                        <div class="card">
+                                            <img class="card-image" src="{% static 'simplelist/images/testimonial-5.jpg' %}" alt="alternative">
+                                            <div class="card-body">
+                                                <p class="testimonial-text">Elementum integer enim neque volutpat aliquam ultrices sagittis orci a sceleri sque purus arcu dictum varius duis</p>
+                                                <p class="testimonial-author">Lorem Ipsum - Job Title</p>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end of swiper-slide -->
+                                    <!-- end of slide -->
+
+                                    <!-- Slide -->
+                                    <div class="swiper-slide">
+                                        <div class="card">
+                                            <img class="card-image" src="{% static 'simplelist/images/testimonial-6.jpg' %}" alt="alternative">
+                                            <div class="card-body">
+                                                <p class="testimonial-text">Elementum integer enim neque volutpat aliquam ultrices sagittis orci a sceleri sque purus arcu dictum varius duis</p>
+                                                <p class="testimonial-author">Lorem Ipsum - Job Title</p>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end of swiper-slide -->
+                                    <!-- end of slide -->
+
+                                </div> <!-- end of swiper-wrapper -->
+
+                                <!-- Add Arrows -->
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <!-- end of add arrows -->
+
+                            </div> <!-- end of swiper-container -->
+                        </div> <!-- end of slider-container -->
+                        <!-- end of card slider -->
+
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of slider-1 -->
+        <!-- end of testimonials -->
+
+
+        <!-- Download -->
+        <div class="counter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="image-container">
+                            <img class="img-fluid" src="{% static 'simplelist/images/download.png' %}" alt="alternative">
+                        </div> <!-- end of image-container -->
+                    </div> <!-- end of col -->
+                    <div class="col-lg-7">
+                        <div class="text-container">
+
+                            <!-- Counter -->
+                            <div id="counter">
+                                <div class="cell">
+                                    <div class="counter-value number-count" data-count="236">1</div>
+                                    <p class="counter-info">Lorem Ipsum</p>
+                                </div>
+                                <div class="cell">
+                                    <div class="counter-value number-count" data-count="382">1</div>
+                                    <p class="counter-info">Soneco Denive</p>
+                                </div>
+                                <div class="cell">
+                                    <div class="counter-value number-count" data-count="259">1</div>
+                                    <p class="counter-info">Nislve Pretiu</p>
+                                </div>
+                            </div>
+                            <!-- end of counter -->
+
+                            <p>Lectus quam id gravida in fermentum et sol licitudin ac orci phasellus tincidunt vitaer</p>
+                            <a class="btn-solid-lg" href="#your-link"><i class="fab fa-apple"></i>Download</a>
+                            <a class="btn-solid-lg" href="#your-link"><i class="fab fa-google-play"></i>Download</a>
+                        </div> <!-- end of text-container -->
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of counter -->
+        <!-- end of download -->
+
+
+        <!-- Customers -->
+        <div id="download" class="slider-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <!-- Image Slider -->
+                        <div class="slider-container">
+                            <div class="swiper-container image-slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="image-container">
+                                            <img class="img-responsive" src="{% static 'simplelist/images/customer-logo-1.png' %}" alt="alternative">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="image-container">
+                                            <img class="img-responsive" src="{% static 'simplelist/images/customer-logo-2.png' %}" alt="alternative">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="image-container">
+                                            <img class="img-responsive" src="{% static 'simplelist/images/customer-logo-3.png' %}" alt="alternative">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="image-container">
+                                            <img class="img-responsive" src="{% static 'simplelist/images/customer-logo-4.png' %}" alt="alternative">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="image-container">
+                                            <img class="img-responsive" src="{% static 'simplelist/images/customer-logo-5.png' %}" alt="alternative">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="image-container">
+                                            <img class="img-responsive" src="{% static 'simplelist/images/customer-logo-6.png' %}" alt="alternative">
+                                        </div>
+                                    </div>
+                                </div> <!-- end of swiper-wrapper -->
+                            </div> <!-- end of swiper container -->
+                        </div> <!-- end of slider-container -->
+                        <!-- end of image slider -->
+
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of slider-2 -->
+        <!-- end of customers -->
+
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer-col first">
+                            <h6>Lorem Ipsum</h6>
+                            <p class="p-small">Aliquet lectus proin nibh nisl condimentum id ultrices eros in cursus turpis massa tincidunt enim sit amet venenatis urna cursus eget nunc reva san</p>
+                        </div> <!-- end of footer-col -->
+                        <div class="footer-col second">
+                            <h6>Links</h6>
+                            <ul class="list-unstyled li-space-lg p-small">
+                                <li>Important: <a href="terms.html">Terms & Conditions</a>, <a href="privacy.html">Privacy Policy</a></li>
+                                <li>Useful: <a href="#">Colorpicker</a>, <a href="#">Icon Library</a>, <a href="#">Illustrations</a></li>
+                                <li>Menu: <a href="article.html">Article</a>, <a href="features.html">Features</a>, <a href="pricing.html">Pricing</a>, <a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div> <!-- end of footer-col -->
+                        <div class="footer-col third">
+                            <span class="fa-stack">
+                                <a href="#your-link">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-facebook-f fa-stack-1x"></i>
+                                </a>
+                            </span>
+                            <span class="fa-stack">
+                                <a href="#your-link">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x"></i>
+                                </a>
+                            </span>
+                            <span class="fa-stack">
+                                <a href="#your-link">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-pinterest-p fa-stack-1x"></i>
+                                </a>
+                            </span>
+                            <span class="fa-stack">
+                                <a href="#your-link">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x"></i>
+                                </a>
+                            </span>
+                            <p class="p-small">Nunc lobortis mattis aliq uamf <a href="mailto:contact@site.com"><strong>contact@site.com</strong></a></p>
+                        </div> <!-- end of footer-col -->
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of footer -->
+        <!-- end of footer -->
+
+
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p class="p-small">Copyright © Some name</p>
+                    </div> <!-- end of col -->
+                </div> <!-- enf of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of copyright -->
+        <!-- end of copyright -->
+
+
+        <!-- Scripts -->
+        <script src="{%  static 'simplelist/js/jquery.min.js' %}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+        <script src="{%  static 'simplelist/js/bootstrap.min.js' %}"></script> <!-- Bootstrap framework -->
+        <script src="{%  static 'simplelist/js/jquery.easing.min' %}.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+        <script src="{%  static 'simplelist/js/swiper.min.js' %}"></script> <!-- Swiper for image and text sliders -->
+        <script src="{%  static 'simplelist/js/jquery.magnific-popup' %}.js"></script> <!-- Magnific Popup for lightboxes -->
+        <script src="{%  static 'simplelist/js/morphext.min.js' %}"></script> <!-- Morphtext rotating text in the header -->
+        <script src="{%  static 'simplelist/js/scripts.js' %}"></script> <!-- Custom scripts -->
+    </body>
+</html>
