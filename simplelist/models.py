@@ -3,6 +3,8 @@ from django.db import models
 # Create your models here.
 from wagtail.admin import blocks
 from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, StreamFieldPanel
+from wagtail.contrib.settings.models import BaseSetting
+from wagtail.contrib.settings.registry import register_setting
 from wagtail.core.models import Page
 from wagtail.core.fields import RichTextField, StreamField
 
@@ -42,19 +44,6 @@ class SimpleListPage(Page):
         blank=True,
     )
 
-    footer_title = models.CharField(max_length=20, default='', verbose_name='Título del footer')
-    footer_desc = models.TextField(default='', verbose_name='Descripción del footer')
-    footer_link_label = models.CharField(max_length=20, verbose_name='Etiqueta enlace', default='Enlaces')
-
-    footer_urls = StreamField([
-        ('url', blocks.StructBlock([
-            ('label', blocks.CharBlock(max_length=50, label="Etiqueta")),
-            ('urls', blocks.URLBlock(label="URL")),
-        ], label="URL"))
-    ], default='', null=True, blank=True, )
-
-    footer_copyright = models.CharField(max_length=50, default='', null=True, blank=True)
-
     content_panels = Page.content_panels + [
         MultiFieldPanel([
             FieldPanel('hero_title'),
@@ -83,13 +72,6 @@ class SimpleListPage(Page):
                 FieldPanel('download_caption'),
             ]),
         ], heading="características"),
-        MultiFieldPanel([
-            FieldPanel('footer_title'),
-            FieldPanel('footer_desc'),
-            FieldPanel('footer_link_label'),
-            StreamFieldPanel('footer_urls'),
-            FieldPanel('footer_copyright'),
-        ], heading='Pie de página'),
     ]
 
     subpage_types = ['simplelist.TermsPage']
@@ -109,3 +91,24 @@ class TermsPage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('content')
     ]
+
+
+@register_setting
+class FooterSettings(BaseSetting):
+    footer_title = models.CharField(max_length=20, default='', verbose_name='Título del footer')
+    footer_desc = models.TextField(default='', verbose_name='Descripción del footer')
+    footer_link_label = models.CharField(max_length=20, verbose_name='Etiqueta enlace', default='Enlaces')
+
+    footer_copyright = models.CharField(max_length=50, default='', null=True, blank=True)
+
+    footer_email = models.EmailField(default='myemail@email.com')
+
+    footer_urls = StreamField([
+        ('url', blocks.StructBlock([
+            ('label', blocks.CharBlock(max_length=50, label="Etiqueta")),
+            ('urls', blocks.URLBlock(label="URL")),
+        ], label="URL"))
+    ], default='', null=True, blank=True, )
+
+    class Meta:
+        verbose_name = 'Datos del pie de página'

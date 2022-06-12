@@ -360,12 +360,12 @@
             <div class="col-lg-12">
                 <div class="footer-col first">
                     <h6>{{ page.footer_title|title }}</h6>
-                    <p class="p-small">{{ page.footer_desc|capfirst }}</p>
+                    <p class="p-small">{{ settings.simplelist.FooterSettings|capfirst }}</p>
                 </div> <!-- end of footer-col -->
                 <div class="footer-col second">
-                    <h6>{{ page.footer_link_label|capfirst }}</h6>
+                    <h6>{{ settings.simplelist.FooterSettings.footer_link_label|capfirst }}</h6>
                     <ul class="list-unstyled li-space-lg p-small">
-                        {% for url in page.footer_urls %}
+                        {% for url in settings.simplelist.FooterSettings.footer_urls %}
                             <li>
                                 <a href="{{ url.value.urls }}">{{ url.value.label }}</a>
                             </li>
@@ -374,7 +374,7 @@
                 </div> <!-- end of footer-col -->
                 <div class="footer-col third">
 
-                    <p class="p-small">Nunc lobortis mattis aliq uamf <a href="mailto:contact@site.com"><strong>contact@site.com</strong></a>
+                    <p class="p-small">Contacto: <a href="mailto:contact@site.com"><strong>{{ settings.simplelist.FooterSettings.footer_email }}</strong></a>
                     </p>
                 </div> <!-- end of footer-col -->
             </div> <!-- end of col -->
@@ -389,7 +389,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <p class="p-small">{{ page.footer_copyright|capfirst }}</p>
+                <p class="p-small">{{ settings.simplelist.FooterSettings.footer_copyright|capfirst }}</p>
             </div> <!-- end of col -->
         </div> <!-- enf of row -->
     </div> <!-- end of container -->
